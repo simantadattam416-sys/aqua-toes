@@ -1,759 +1,1079 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>AquaToes™ — Premium Foot Wash Water</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AquaToes™ — Premium Foot Wash Water</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
 
-    :root {
-      --white:   #FAFAF8;
-      --navy:    #0D1B2A;
-      --gold:    #C9A84C;
-      --gold-lt: #E8D5A3;
-      --grey:    #E8E6E0;
-      --mid:     #6B6B6B;
-    }
+      :root {
+        --white: #fafaf8;
+        --navy: #0d1b2a;
+        --gold: #c9a84c;
+        --gold-lt: #e8d5a3;
+        --grey: #e8e6e0;
+        --mid: #6b6b6b;
+      }
 
-    html { scroll-behavior: smooth; }
+      html {
+        scroll-behavior: smooth;
+      }
 
-    body {
-      background: var(--white);
-      color: var(--navy);
-      font-family: 'Inter', sans-serif;
-      font-weight: 300;
-      line-height: 1.7;
-    }
+      body {
+        background: var(--white);
+        color: var(--navy);
+        font-family: "Inter", sans-serif;
+        font-weight: 300;
+        line-height: 1.7;
+      }
 
-    /* ── NAV ── */
-    nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1.4rem 6vw;
-      border-bottom: 1px solid var(--grey);
-      position: sticky;
-      top: 0;
-      background: var(--white);
-      z-index: 100;
-    }
-    .logo {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.4rem;
-      letter-spacing: .04em;
-    }
-    .logo span { color: var(--gold); }
-    nav ul { list-style: none; display: flex; gap: 2.4rem; }
-    nav ul a {
-      text-decoration: none;
-      color: var(--navy);
-      font-size: .82rem;
-      letter-spacing: .12em;
-      text-transform: uppercase;
-      font-weight: 500;
-      transition: color .2s;
-    }
-    nav ul a:hover { color: var(--gold); }
+      /* ── NAV ── */
+      nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1.4rem 6vw;
+        border-bottom: 1px solid var(--grey);
+        position: sticky;
+        top: 0;
+        background: var(--white);
+        z-index: 100;
+      }
+      .logo {
+        font-family: "Playfair Display", serif;
+        font-size: 1.4rem;
+        letter-spacing: 0.04em;
+      }
+      .logo span {
+        color: var(--gold);
+      }
+      nav ul {
+        list-style: none;
+        display: flex;
+        gap: 2.4rem;
+      }
+      nav ul a {
+        text-decoration: none;
+        color: var(--navy);
+        font-size: 0.82rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        font-weight: 500;
+        transition: color 0.2s;
+      }
+      nav ul a:hover {
+        color: var(--gold);
+      }
 
-    /* ── HERO ── */
-    .hero {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      min-height: 92vh;
-      align-items: center;
-    }
-    .hero-text {
-      padding: 6rem 5vw 6rem 8vw;
-    }
-    .eyebrow {
-      font-size: .72rem;
-      letter-spacing: .22em;
-      text-transform: uppercase;
-      color: var(--gold);
-      font-weight: 500;
-      margin-bottom: 1.2rem;
-    }
-    .hero h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(2.8rem, 5vw, 4.4rem);
-      line-height: 1.12;
-      margin-bottom: 1.6rem;
-    }
-    .hero h1 em {
-      font-style: italic;
-      color: var(--gold);
-    }
-    .hero p {
-      font-size: 1.05rem;
-      color: var(--mid);
-      max-width: 38ch;
-      margin-bottom: 2.4rem;
-    }
-    .btn {
-      display: inline-block;
-      padding: .85rem 2.4rem;
-      background: var(--navy);
-      color: var(--white);
-      text-decoration: none;
-      font-size: .8rem;
-      letter-spacing: .14em;
-      text-transform: uppercase;
-      font-weight: 500;
-      transition: background .2s, transform .15s;
-    }
-    .btn:hover { background: var(--gold); transform: translateY(-2px); }
-    .btn-outline {
-      background: transparent;
-      border: 1.5px solid var(--navy);
-      color: var(--navy);
-      margin-left: 1rem;
-    }
-    .btn-outline:hover { background: var(--navy); color: var(--white); }
+      /* ── HERO ── */
+      .hero {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        min-height: 92vh;
+        align-items: center;
+      }
+      .hero-text {
+        padding: 6rem 5vw 6rem 8vw;
+      }
+      .eyebrow {
+        font-size: 0.72rem;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: var(--gold);
+        font-weight: 500;
+        margin-bottom: 1.2rem;
+      }
+      .hero h1 {
+        font-family: "Playfair Display", serif;
+        font-size: clamp(2.8rem, 5vw, 4.4rem);
+        line-height: 1.12;
+        margin-bottom: 1.6rem;
+      }
+      .hero h1 em {
+        font-style: italic;
+        color: var(--gold);
+      }
+      .hero p {
+        font-size: 1.05rem;
+        color: var(--mid);
+        max-width: 38ch;
+        margin-bottom: 2.4rem;
+      }
+      .btn {
+        display: inline-block;
+        padding: 0.85rem 2.4rem;
+        background: var(--navy);
+        color: var(--white);
+        text-decoration: none;
+        font-size: 0.8rem;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        font-weight: 500;
+        transition:
+          background 0.2s,
+          transform 0.15s;
+      }
+      .btn:hover {
+        background: var(--gold);
+        transform: translateY(-2px);
+      }
+      .btn-outline {
+        background: transparent;
+        border: 1.5px solid var(--navy);
+        color: var(--navy);
+        margin-left: 1rem;
+      }
+      .btn-outline:hover {
+        background: var(--navy);
+        color: var(--white);
+      }
 
-    .hero-visual {
-      background: var(--navy);
-      height: 100%;
-      min-height: 92vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-      overflow: hidden;
-    }
-    .bottle-wrap {
-      text-align: center;
-      position: relative;
-      z-index: 2;
-    }
-    .bottle-svg { width: 220px; filter: drop-shadow(0 20px 40px rgba(0,0,0,.5)); }
-    .badge {
-      position: absolute;
-      top: 12%;
-      right: 10%;
-      background: var(--gold);
-      color: var(--navy);
-      font-size: .65rem;
-      font-weight: 600;
-      letter-spacing: .1em;
-      text-transform: uppercase;
-      padding: .5rem .9rem;
-      border-radius: 50px;
-      transform: rotate(12deg);
-    }
-    .water-ring {
-      position: absolute;
-      width: 500px;
-      height: 500px;
-      border: 1px solid rgba(201,168,76,.15);
-      border-radius: 50%;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%,-50%);
-    }
-    .water-ring:nth-child(2) { width: 700px; height: 700px; border-color: rgba(201,168,76,.08); }
+      .hero-visual {
+        background: var(--navy);
+        height: 100%;
+        min-height: 92vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        overflow: hidden;
+      }
+      .bottle-wrap {
+        text-align: center;
+        position: relative;
+        z-index: 2;
+      }
+      .bottle-img {
+        width: 350px;
+        max-width: 80%;
+        height: auto;
+        filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.5));
+      }
+      .badge {
+        position: absolute;
+        top: 12%;
+        right: 10%;
+        background: var(--gold);
+        color: var(--navy);
+        font-size: 0.65rem;
+        font-weight: 600;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        padding: 0.5rem 0.9rem;
+        border-radius: 50px;
+        transform: rotate(12deg);
+      }
+      .water-ring {
+        position: absolute;
+        width: 500px;
+        height: 500px;
+        border: 1px solid rgba(201, 168, 76, 0.15);
+        border-radius: 50%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+      .water-ring:nth-child(2) {
+        width: 700px;
+        height: 700px;
+        border-color: rgba(201, 168, 76, 0.08);
+      }
 
-    /* ── STATS BAR ── */
-    .stats {
-      background: var(--gold);
-      color: var(--navy);
-      display: flex;
-      justify-content: space-around;
-      padding: 2rem 6vw;
-      flex-wrap: wrap;
-      gap: 1.2rem;
-    }
-    .stat { text-align: center; }
-    .stat-num {
-      font-family: 'Playfair Display', serif;
-      font-size: 2.2rem;
-      font-weight: 700;
-      display: block;
-    }
-    .stat-label { font-size: .72rem; letter-spacing: .14em; text-transform: uppercase; font-weight: 500; }
+      /* ── STATS BAR ── */
+      .stats {
+        background: var(--gold);
+        color: var(--navy);
+        display: flex;
+        justify-content: space-around;
+        padding: 2rem 6vw;
+        flex-wrap: wrap;
+        gap: 1.2rem;
+      }
+      .stat {
+        text-align: center;
+      }
+      .stat-num {
+        font-family: "Playfair Display", serif;
+        font-size: 2.2rem;
+        font-weight: 700;
+        display: block;
+      }
+      .stat-label {
+        font-size: 0.72rem;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        font-weight: 500;
+      }
 
-    /* ── ABOUT ── */
-    .about {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 0;
-    }
-    .about-img {
-      background: var(--grey);
-      min-height: 560px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-      position: relative;
-    }
-    .foot-icon {
-      font-size: 9rem;
-      opacity: .18;
-      user-select: none;
-      position: absolute;
-    }
-    .about-text {
-      padding: 5rem 6vw;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
-    .section-label {
-      font-size: .72rem;
-      letter-spacing: .2em;
-      text-transform: uppercase;
-      color: var(--gold);
-      font-weight: 600;
-      margin-bottom: 1rem;
-    }
-    .about-text h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(1.8rem, 3vw, 2.6rem);
-      line-height: 1.2;
-      margin-bottom: 1.4rem;
-    }
-    .about-text p {
-      color: var(--mid);
-      margin-bottom: 1rem;
-      font-size: .97rem;
-    }
-    blockquote {
-      border-left: 3px solid var(--gold);
-      padding: 1rem 1.4rem;
-      margin: 1.6rem 0;
-      font-family: 'Playfair Display', serif;
-      font-style: italic;
-      font-size: 1.05rem;
-      color: var(--navy);
-      background: #f5f3ed;
-    }
+      /* ── ABOUT ── */
+      .about {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0;
+      }
+      .about-img {
+        background: var(--grey);
+        min-height: 560px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        position: relative;
+      }
+      .foot-icon {
+        font-size: 9rem;
+        opacity: 0.18;
+        user-select: none;
+        position: absolute;
+      }
+      .about-text {
+        padding: 5rem 6vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      .section-label {
+        font-size: 0.72rem;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--gold);
+        font-weight: 600;
+        margin-bottom: 1rem;
+      }
+      .about-text h2 {
+        font-family: "Playfair Display", serif;
+        font-size: clamp(1.8rem, 3vw, 2.6rem);
+        line-height: 1.2;
+        margin-bottom: 1.4rem;
+      }
+      .about-text p {
+        color: var(--mid);
+        margin-bottom: 1rem;
+        font-size: 0.97rem;
+      }
+      blockquote {
+        border-left: 3px solid var(--gold);
+        padding: 1rem 1.4rem;
+        margin: 1.6rem 0;
+        font-family: "Playfair Display", serif;
+        font-style: italic;
+        font-size: 1.05rem;
+        color: var(--navy);
+        background: #f5f3ed;
+      }
 
-    /* ── PRODUCTS ── */
-    .products { padding: 6rem 8vw; text-align: center; }
-    .products h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(2rem, 3.5vw, 3rem);
-      margin-bottom: .6rem;
-    }
-    .products .sub {
-      color: var(--mid);
-      font-size: .95rem;
-      margin-bottom: 3.5rem;
-    }
-    .product-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 2rem;
-      text-align: left;
-    }
-    .product-card {
-      border: 1px solid var(--grey);
-      transition: box-shadow .25s, transform .2s;
-      cursor: pointer;
-    }
-    .product-card:hover { box-shadow: 0 12px 40px rgba(13,27,42,.1); transform: translateY(-4px); }
-    .card-img {
-      background: var(--navy);
-      height: 260px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 5rem;
-      position: relative;
-    }
-    .card-img .overlay {
-      position: absolute;
-      bottom: 0; left: 0; right: 0;
-      background: linear-gradient(transparent, rgba(0,0,0,.5));
-      height: 60%;
-    }
-    .card-tag {
-      position: absolute;
-      top: 1rem; left: 1rem;
-      background: var(--gold);
-      color: var(--navy);
-      font-size: .62rem;
-      font-weight: 600;
-      letter-spacing: .1em;
-      text-transform: uppercase;
-      padding: .25rem .7rem;
-    }
-    .card-body { padding: 1.4rem; }
-    .card-body h3 {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.2rem;
-      margin-bottom: .4rem;
-    }
-    .card-body p { font-size: .88rem; color: var(--mid); margin-bottom: 1rem; }
-    .card-price {
-      font-size: 1.1rem;
-      font-weight: 600;
-      color: var(--navy);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .add-btn {
-      background: var(--navy);
-      color: white;
-      border: none;
-      padding: .4rem 1rem;
-      font-size: .75rem;
-      letter-spacing: .1em;
-      text-transform: uppercase;
-      cursor: pointer;
-      font-family: 'Inter', sans-serif;
-      transition: background .2s;
-    }
-    .add-btn:hover { background: var(--gold); color: var(--navy); }
+      /* ── PRODUCTS ── */
+      .products {
+        padding: 6rem 8vw;
+        text-align: center;
+      }
+      .products h2 {
+        font-family: "Playfair Display", serif;
+        font-size: clamp(2rem, 3.5vw, 3rem);
+        margin-bottom: 0.6rem;
+      }
+      .products .sub {
+        color: var(--mid);
+        font-size: 0.95rem;
+        margin-bottom: 3.5rem;
+      }
+      .product-grid {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 2rem;
+        text-align: left;
+      }
+      .product-card {
+        flex: 0 1 calc((100% - 4rem) / 3);
+        border: 1px solid var(--grey);
+        transition:
+          box-shadow 0.25s,
+          transform 0.2s;
+        cursor: pointer;
+      }
+      .product-card:hover {
+        box-shadow: 0 12px 40px rgba(13, 27, 42, 0.1);
+        transform: translateY(-4px);
+      }
+      .card-img {
+        background: var(--navy);
+        height: 260px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 5rem;
+        position: relative;
+      }
+      .card-img .overlay {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: linear-gradient(transparent, rgba(0, 0, 0, 0.5));
+        height: 60%;
+      }
+      .card-tag {
+        position: absolute;
+        top: 1rem;
+        left: 1rem;
+        background: var(--gold);
+        color: var(--navy);
+        font-size: 0.62rem;
+        font-weight: 600;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        padding: 0.25rem 0.7rem;
+      }
+      .card-body {
+        padding: 1.4rem;
+      }
+      .card-body h3 {
+        font-family: "Playfair Display", serif;
+        font-size: 1.2rem;
+        margin-bottom: 0.4rem;
+      }
+      .card-body p {
+        font-size: 0.88rem;
+        color: var(--mid);
+        margin-bottom: 1rem;
+      }
+      .card-price {
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: var(--navy);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .add-btn {
+        background: var(--navy);
+        color: white;
+        border: none;
+        padding: 0.4rem 1rem;
+        font-size: 0.75rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        cursor: pointer;
+        font-family: "Inter", sans-serif;
+        transition: background 0.2s;
+      }
+      .add-btn:hover {
+        background: var(--gold);
+        color: var(--navy);
+      }
 
-    /* ── TESTIMONIALS ── */
-    .testimonials {
-      background: var(--navy);
-      color: var(--white);
-      padding: 6rem 8vw;
-      text-align: center;
-    }
-    .testimonials h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(1.8rem, 3vw, 2.6rem);
-      margin-bottom: .5rem;
-    }
-    .testimonials .sub { color: var(--gold-lt); margin-bottom: 3rem; font-size: .9rem; }
-    .testi-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 2rem;
-      text-align: left;
-    }
-    .testi-card {
-      border: 1px solid rgba(255,255,255,.12);
-      padding: 2rem;
-    }
-    .stars { color: var(--gold); font-size: 1rem; margin-bottom: .8rem; letter-spacing: .2em; }
-    .testi-card p {
-      font-family: 'Playfair Display', serif;
-      font-style: italic;
-      font-size: 1rem;
-      line-height: 1.6;
-      margin-bottom: 1.2rem;
-      color: var(--gold-lt);
-    }
-    .testi-author { font-size: .78rem; letter-spacing: .1em; text-transform: uppercase; color: rgba(255,255,255,.5); }
+      /* ── TESTIMONIALS ── */
+      .testimonials {
+        background: var(--navy);
+        color: var(--white);
+        padding: 6rem 8vw;
+        text-align: center;
+      }
+      .testimonials h2 {
+        font-family: "Playfair Display", serif;
+        font-size: clamp(1.8rem, 3vw, 2.6rem);
+        margin-bottom: 0.5rem;
+      }
+      .testimonials .sub {
+        color: var(--gold-lt);
+        margin-bottom: 3rem;
+        font-size: 0.9rem;
+      }
+      .testi-grid {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 2rem;
+        text-align: left;
+      }
+      .testi-card {
+        flex: 0 1 calc((100% - 4rem) / 3);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        padding: 2rem;
+      }
+      .stars {
+        color: var(--gold);
+        font-size: 1rem;
+        margin-bottom: 0.8rem;
+        letter-spacing: 0.2em;
+      }
+      .testi-card p {
+        font-family: "Playfair Display", serif;
+        font-style: italic;
+        font-size: 1rem;
+        line-height: 1.6;
+        margin-bottom: 1.2rem;
+        color: var(--gold-lt);
+      }
+      .testi-author {
+        font-size: 0.78rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.5);
+      }
 
-    /* ── SCIENCE ── */
-    .science {
-      padding: 6rem 8vw;
-      background: #F0EDE5;
-    }
-    .science-inner {
-      display: grid;
-      grid-template-columns: 1fr 1.4fr;
-      gap: 5rem;
-      align-items: center;
-    }
-    .science h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(1.8rem, 3vw, 2.8rem);
-      line-height: 1.2;
-      margin-bottom: 1.4rem;
-    }
-    .science p { color: var(--mid); margin-bottom: 1rem; font-size: .97rem; }
-    .molecule-box {
-      background: var(--white);
-      border: 1px solid var(--grey);
-      padding: 2.5rem;
-    }
-    .molecule-box h4 {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.1rem;
-      margin-bottom: 1.4rem;
-      color: var(--navy);
-    }
-    .ingredient {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: .7rem 0;
-      border-bottom: 1px solid var(--grey);
-      font-size: .88rem;
-    }
-    .ingredient:last-child { border-bottom: none; }
-    .ing-name { font-weight: 500; }
-    .ing-bar { flex: 1; margin: 0 1rem; height: 4px; background: var(--grey); border-radius: 2px; }
-    .ing-fill { height: 100%; background: var(--gold); border-radius: 2px; }
-    .ing-pct { color: var(--mid); font-size: .78rem; }
+      /* ── SCIENCE ── */
+      .science {
+        padding: 6rem 8vw;
+        background: #f0ede5;
+      }
+      .science-inner {
+        display: grid;
+        grid-template-columns: 1fr 1.4fr;
+        gap: 5rem;
+        align-items: center;
+      }
+      .science h2 {
+        font-family: "Playfair Display", serif;
+        font-size: clamp(1.8rem, 3vw, 2.8rem);
+        line-height: 1.2;
+        margin-bottom: 1.4rem;
+      }
+      .science p {
+        color: var(--mid);
+        margin-bottom: 1rem;
+        font-size: 0.97rem;
+      }
+      .molecule-box {
+        background: var(--white);
+        border: 1px solid var(--grey);
+        padding: 2.5rem;
+      }
+      .molecule-box h4 {
+        font-family: "Playfair Display", serif;
+        font-size: 1.1rem;
+        margin-bottom: 1.4rem;
+        color: var(--navy);
+      }
+      .ingredient {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0.7rem 0;
+        border-bottom: 1px solid var(--grey);
+        font-size: 0.88rem;
+      }
+      .ingredient:last-child {
+        border-bottom: none;
+      }
+      .ing-name {
+        font-weight: 500;
+      }
+      .ing-bar {
+        flex: 1;
+        margin: 0 1rem;
+        height: 4px;
+        background: var(--grey);
+        border-radius: 2px;
+      }
+      .ing-fill {
+        height: 100%;
+        background: var(--gold);
+        border-radius: 2px;
+      }
+      .ing-pct {
+        color: var(--mid);
+        font-size: 0.78rem;
+      }
 
-    /* ── NEWSLETTER ── */
-    .newsletter {
-      padding: 5rem 8vw;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 3rem;
-      border-top: 1px solid var(--grey);
-      flex-wrap: wrap;
-    }
-    .newsletter h3 {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.8rem;
-      max-width: 28ch;
-    }
-    .newsletter p { color: var(--mid); margin-top: .5rem; font-size: .9rem; }
-    .email-form { display: flex; gap: 0; flex-shrink: 0; }
-    .email-form input {
-      padding: .8rem 1.4rem;
-      border: 1.5px solid var(--navy);
-      border-right: none;
-      font-family: 'Inter', sans-serif;
-      font-size: .88rem;
-      width: 260px;
-      outline: none;
-      background: var(--white);
-      color: var(--navy);
-    }
-    .email-form button {
-      padding: .8rem 1.8rem;
-      background: var(--navy);
-      color: white;
-      border: none;
-      font-family: 'Inter', sans-serif;
-      font-size: .78rem;
-      letter-spacing: .12em;
-      text-transform: uppercase;
-      font-weight: 500;
-      cursor: pointer;
-      transition: background .2s;
-    }
-    .email-form button:hover { background: var(--gold); color: var(--navy); }
+      /* ── NEWSLETTER ── */
+      .newsletter {
+        padding: 5rem 8vw;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 3rem;
+        border-top: 1px solid var(--grey);
+        flex-wrap: wrap;
+      }
+      .newsletter h3 {
+        font-family: "Playfair Display", serif;
+        font-size: 1.8rem;
+        max-width: 28ch;
+      }
+      .newsletter p {
+        color: var(--mid);
+        margin-top: 0.5rem;
+        font-size: 0.9rem;
+      }
+      .email-form {
+        display: flex;
+        gap: 0;
+        flex-shrink: 0;
+      }
+      .email-form input {
+        padding: 0.8rem 1.4rem;
+        border: 1.5px solid var(--navy);
+        border-right: none;
+        font-family: "Inter", sans-serif;
+        font-size: 0.88rem;
+        width: 260px;
+        outline: none;
+        background: var(--white);
+        color: var(--navy);
+      }
+      .email-form button {
+        padding: 0.8rem 1.8rem;
+        background: var(--navy);
+        color: white;
+        border: none;
+        font-family: "Inter", sans-serif;
+        font-size: 0.78rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        font-weight: 500;
+        cursor: pointer;
+        transition: background 0.2s;
+      }
+      .email-form button:hover {
+        background: var(--gold);
+        color: var(--navy);
+      }
 
-    /* ── FOOTER ── */
-    footer {
-      background: var(--navy);
-      color: rgba(255,255,255,.45);
-      padding: 3rem 8vw 2rem;
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr 1fr;
-      gap: 2rem;
-    }
-    footer h4 {
-      color: var(--white);
-      font-size: .78rem;
-      letter-spacing: .14em;
-      text-transform: uppercase;
-      font-weight: 600;
-      margin-bottom: 1rem;
-    }
-    footer ul { list-style: none; }
-    footer ul li { margin-bottom: .5rem; }
-    footer ul a {
-      color: rgba(255,255,255,.45);
-      text-decoration: none;
-      font-size: .84rem;
-      transition: color .2s;
-    }
-    footer ul a:hover { color: var(--gold); }
-    .footer-brand .logo { display: block; margin-bottom: .6rem; color: var(--white); }
-    .footer-brand p { font-size: .82rem; line-height: 1.6; }
-    .footer-bottom {
-      background: var(--navy);
-      border-top: 1px solid rgba(255,255,255,.1);
-      text-align: center;
-      padding: 1.2rem 8vw;
-      font-size: .76rem;
-      color: rgba(255,255,255,.25);
-    }
+      /* ── FOOTER ── */
+      footer {
+        background: var(--navy);
+        color: rgba(255, 255, 255, 0.45);
+        padding: 3rem 8vw 2rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        gap: 2rem;
+      }
+      footer h4 {
+        color: var(--white);
+        font-size: 0.78rem;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        font-weight: 600;
+        margin-bottom: 1rem;
+      }
+      footer ul {
+        list-style: none;
+      }
+      footer ul li {
+        margin-bottom: 0.5rem;
+      }
+      footer ul a {
+        color: rgba(255, 255, 255, 0.45);
+        text-decoration: none;
+        font-size: 0.84rem;
+        transition: color 0.2s;
+      }
+      footer ul a:hover {
+        color: var(--gold);
+      }
+      .footer-brand .logo {
+        display: block;
+        margin-bottom: 0.6rem;
+        color: var(--white);
+      }
+      .footer-brand p {
+        font-size: 0.82rem;
+        line-height: 1.6;
+      }
+      .footer-bottom {
+        background: var(--navy);
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        text-align: center;
+        padding: 1.2rem 8vw;
+        font-size: 0.76rem;
+        color: rgba(255, 255, 255, 0.25);
+      }
 
-    /* ── DISCLAIMER ── */
-    .disclaimer {
-      background: #fff8e1;
-      border-top: 2px solid var(--gold);
-      padding: 1rem 8vw;
-      font-size: .76rem;
-      color: #7a6000;
-      text-align: center;
-    }
+      /* ── DISCLAIMER ── */
+      .disclaimer {
+        background: #fff8e1;
+        border-top: 2px solid var(--gold);
+        padding: 1rem 8vw;
+        font-size: 0.76rem;
+        color: #7a6000;
+        text-align: center;
+      }
 
-    /* ── RESPONSIVE ── */
-    @media (max-width: 900px) {
-      .hero, .about, .science-inner { grid-template-columns: 1fr; }
-      .hero-visual { min-height: 340px; }
-      .product-grid, .testi-grid { grid-template-columns: 1fr; }
-      footer { grid-template-columns: 1fr 1fr; }
-      nav ul { display: none; }
-    }
-  </style>
-</head>
-<body>
+      /* ── RESPONSIVE ── */
+      @media (max-width: 900px) {
+        .hero,
+        .about,
+        .science-inner {
+          grid-template-columns: 1fr;
+        }
+        .hero-visual {
+          min-height: 340px;
+        }
+        .product-card,
+        .testi-card {
+          flex-basis: 100%;
+        }
+        footer {
+          grid-template-columns: 1fr 1fr;
+        }
+        nav ul {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- NAV -->
+    <nav>
+      <div class="logo">Aqua<span>Toes</span>™</div>
+      <ul>
+        <li><a href="#about">Our Story</a></li>
+        <li><a href="#products">Collection</a></li>
+        <li><a href="#science">Science</a></li>
+        <li>
+          <a href="#products" class="btn" style="padding: 0.5rem 1.4rem"
+            >Shop Now</a
+          >
+        </li>
+      </ul>
+    </nav>
 
-<!-- NAV -->
-<nav>
-  <div class="logo">Aqua<span>Toes</span>™</div>
-  <ul>
-    <li><a href="#about">Our Story</a></li>
-    <li><a href="#products">Collection</a></li>
-    <li><a href="#science">Science</a></li>
-    <li><a href="#products" class="btn" style="padding:.5rem 1.4rem">Shop Now</a></li>
-  </ul>
-</nav>
-
-<!-- HERO -->
-<section class="hero">
-  <div class="hero-text">
-    <p class="eyebrow">Artisanal · Foot-Sourced · Sustainable</p>
-    <h1>Water, but <em>after</em><br>it met your feet.</h1>
-    <p>AquaToes™ harnesses the ancient wisdom of foot bathing and captures the resulting liquid in small-batch, cold-pressed bottles. For those who demand more from their water.</p>
-    <a href="#products" class="btn">Explore Collection</a>
-    <a href="#about" class="btn btn-outline">Our Process</a>
-  </div>
-  <div class="hero-visual">
-    <div class="water-ring"></div>
-    <div class="water-ring"></div>
-    <div class="badge">Est. 2024</div>
-    <div class="bottle-wrap">
-      <!-- Inline SVG Bottle -->
-      <svg class="bottle-svg" viewBox="0 0 120 280" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <linearGradient id="bottleGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-            <stop offset="0%" style="stop-color:#1a3a5c"/>
-            <stop offset="40%" style="stop-color:#2d6a9f"/>
-            <stop offset="100%" style="stop-color:#1a3a5c"/>
-          </linearGradient>
-          <linearGradient id="waterGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-            <stop offset="0%" style="stop-color:#4da8da;stop-opacity:.7"/>
-            <stop offset="100%" style="stop-color:#1a5276;stop-opacity:.9"/>
-          </linearGradient>
-        </defs>
-        <!-- Cap -->
-        <rect x="42" y="10" width="36" height="22" rx="4" fill="#C9A84C"/>
-        <rect x="46" y="5" width="28" height="10" rx="3" fill="#b8963e"/>
-        <!-- Neck -->
-        <rect x="44" y="30" width="32" height="20" rx="2" fill="url(#bottleGrad)"/>
-        <!-- Body -->
-        <rect x="20" y="48" width="80" height="200" rx="8" fill="url(#bottleGrad)"/>
-        <!-- Water fill inside -->
-        <rect x="22" y="120" width="76" height="126" rx="6" fill="url(#waterGrad)" opacity=".6"/>
-        <!-- Label area -->
-        <rect x="24" y="90" width="72" height="110" rx="4" fill="rgba(250,250,248,.12)"/>
-        <!-- Label text lines -->
-        <rect x="34" y="100" width="52" height="3" rx="2" fill="rgba(201,168,76,.9)"/>
-        <rect x="28" y="108" width="64" height="7" rx="2" fill="rgba(250,250,248,.85)"/>
-        <rect x="30" y="120" width="60" height="3" rx="2" fill="rgba(250,250,248,.5)"/>
-        <rect x="34" y="127" width="52" height="3" rx="2" fill="rgba(250,250,248,.4)"/>
-        <rect x="34" y="134" width="52" height="3" rx="2" fill="rgba(250,250,248,.4)"/>
-        <!-- Foot print on label -->
-        <text x="60" y="175" text-anchor="middle" font-size="22" opacity=".25">🦶</text>
-        <!-- Shine -->
-        <rect x="25" y="52" width="10" height="180" rx="5" fill="rgba(255,255,255,.08)"/>
-      </svg>
-      <p style="color:var(--gold-lt);font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;margin-top:1.4rem">500ml · Single Estate Foot</p>
-    </div>
-  </div>
-</section>
-
-<!-- STATS -->
-<div class="stats">
-  <div class="stat"><span class="stat-num">12,000+</span><span class="stat-label">Satisfied Customers*</span></div>
-  <div class="stat"><span class="stat-num">3</span><span class="stat-label">Foot Donors on Staff</span></div>
-  <div class="stat"><span class="stat-num">0</span><span class="stat-label">FDA Approvals (Pending)</span></div>
-  <div class="stat"><span class="stat-num">∞</span><span class="stat-label">Spiritual Minerals</span></div>
-</div>
-
-<!-- ABOUT -->
-<section class="about" id="about">
-  <div class="about-img">
-    <div class="foot-icon" style="top:10%;left:15%">🦶</div>
-    <div class="foot-icon" style="bottom:10%;right:15%;transform:scaleX(-1)">🦶</div>
-    <div class="foot-icon" style="top:50%;left:50%;transform:translate(-50%,-50%) rotate(30deg);font-size:14rem;opacity:.06">🦶</div>
-    <div style="z-index:2;text-align:center;padding:2rem">
-      <p style="font-family:'Playfair Display',serif;font-style:italic;font-size:1.3rem;color:var(--navy);line-height:1.6;max-width:28ch">"When I first washed my feet, I looked at the water and thought: <em>this should cost more.</em>"</p>
-      <p style="font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--mid);margin-top:1rem">— Vivo Raj, Founder & Chief Foot Officer</p>
-    </div>
-  </div>
-  <div class="about-text">
-    <p class="section-label">Our Heritage</p>
-    <h2>A Story Told <br>One Rinse at a Time</h2>
-    <p>In 2024, after a particularly long hike, our founder Vivo Raj found himself staring into a basin of post-walk foot wash water. The brownish hue. The earthy bouquet. The warmth.</p>
-    <p>He asked himself: <em>why should this journey end in a drain?</em> And with that existential pivot, AquaToes™ was born — the world's first luxury foot wash water brand.</p>
-    <blockquote>
-      "Our water doesn't just hydrate the body. It hydrates the soul — specifically, the part of the soul located between the toes."
-    </blockquote>
-    <p>Each bottle is sourced from a curated selection of feet, hand-selected for their terroir, arch complexity, and walking history. No two bottles are the same. No refunds either.</p>
-  </div>
-</section>
-
-<!-- PRODUCTS -->
-<section class="products" id="products">
-  <p class="section-label" style="text-align:center">The Collection</p>
-  <h2>Find Your Foot Note</h2>
-  <p class="sub">Each expression is unique, like the feet that made it. Choose wisely.</p>
-  <div class="product-grid">
-
-    <div class="product-card">
-      <div class="card-img" style="background:#0D1B2A">
-        <span style="font-size:5rem;position:relative;z-index:1">🏃</span>
-        <div class="overlay"></div>
-        <span class="card-tag">Bestseller</span>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-text">
+        <p class="eyebrow">Artisanal · Foot-Sourced · Sustainable</p>
+        <h1>Water, but <em>after</em><br />it met your feet.</h1>
+        <p>
+          AquaToes™ harnesses the ancient wisdom of foot bathing and captures
+          the resulting liquid in small-batch, cold-pressed bottles. For those
+          who demand more from their water.
+        </p>
+        <a href="#products" class="btn">Explore Collection</a>
+        <a href="#about" class="btn btn-outline">Our Process</a>
       </div>
-      <div class="card-body">
-        <h3>Neighbor's Overachieving Kid</h3>
-        <p>Just got into Notre Dame College with raw determination, and mild blister. An endurance experience in liquid form.</p>
-        <div class="card-price">
-          BDT 49.00 / 500ml
-          <button class="add-btn">Add to Cart</button>
+      <div class="hero-visual">
+        <div class="water-ring"></div>
+        <div class="water-ring"></div>
+        <div class="badge">Est. 2024</div>
+        <div class="bottle-wrap">
+          <img class="bottle-img" src="bottle.png" alt="AquaToes bottle" />
+          <p
+            style="
+              color: var(--gold-lt);
+              font-size: 0.78rem;
+              letter-spacing: 0.18em;
+              padding-left: 0.18em;
+              text-transform: uppercase;
+              margin-top: 1.4rem;
+            "
+          >
+            500ml · Single Estate Foot
+          </p>
         </div>
       </div>
+    </section>
+
+    <!-- STATS -->
+    <div class="stats">
+      <div class="stat">
+        <span class="stat-num">12,000+</span
+        ><span class="stat-label">Satisfied Customers*</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num">3</span
+        ><span class="stat-label">Foot Donors on Staff</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num">0</span
+        ><span class="stat-label">FDA Approvals (Pending)</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num">∞</span
+        ><span class="stat-label">Spiritual Minerals</span>
+      </div>
     </div>
 
-    <div class="product-card">
-      <div class="card-img" style="background:#1a2a1a">
-        <span style="font-size:5rem;position:relative;z-index:1">🧘</span>
-        <div class="overlay"></div>
-        <span class="card-tag">Limited</span>
-      </div>
-      <div class="card-body">
-        <h3>Actor-Turned-Politician</h3>
-        <p>Sourced from the beloved  who courageously lost five consecutive nomination races from his own party. Spiritually complex. Hints of incense and enlightenment. Vegan feet only.</p>
-        <div class="card-price">
-         BDT 129.00 / 500ml
-          <button class="add-btn">Add to Cart</button>
+    <!-- ABOUT -->
+    <section class="about" id="about">
+      <div class="about-img">
+        <div class="foot-icon" style="top: 10%; left: 15%">🦶</div>
+        <div
+          class="foot-icon"
+          style="bottom: 10%; right: 15%; transform: scaleX(-1)"
+        >
+          🦶
+        </div>
+        <div
+          class="foot-icon"
+          style="
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(30deg);
+            font-size: 14rem;
+            opacity: 0.06;
+          "
+        >
+          🦶
+        </div>
+        <div style="z-index: 2; text-align: center; padding: 2rem">
+          <p
+            style="
+              font-family: &quot;Playfair Display&quot;, serif;
+              font-style: italic;
+              font-size: 1.3rem;
+              color: var(--navy);
+              line-height: 1.6;
+              max-width: 28ch;
+            "
+          >
+            "When I first washed my feet, I looked at the water and thought:
+            <em>this should cost more.</em>"
+          </p>
+          <p
+            style="
+              font-size: 0.78rem;
+              letter-spacing: 0.14em;
+              text-transform: uppercase;
+              color: var(--mid);
+              margin-top: 1rem;
+            "
+          >
+            — Vivo Raj, Founder & Chief Foot Officer
+          </p>
         </div>
       </div>
-    </div>
-
-    <div class="product-card">
-      <div class="card-img" style="background:#1a1410">
-        <span style="font-size:5rem;position:relative;z-index:1">👴</span>
-        <div class="overlay"></div>
-        <span class="card-tag">Vintage</span>
+      <div class="about-text">
+        <p class="section-label">Our Heritage</p>
+        <h2>A Story Told <br />One Rinse at a Time</h2>
+        <p>
+          In 2024, after a particularly long hike, our founder Vivo Raj found
+          himself staring into a basin of post-walk foot wash water. The
+          brownish hue. The earthy bouquet. The warmth.
+        </p>
+        <p>
+          He asked himself: <em>why should this journey end in a drain?</em> And
+          with that existential pivot, AquaToes™ was born — the world's first
+          luxury foot wash water brand.
+        </p>
+        <blockquote>
+          "Our water doesn't just hydrate the body. It hydrates the soul —
+          specifically, the part of the soul located between the toes."
+        </blockquote>
+        <p>
+          Each bottle is sourced from a curated selection of feet, hand-selected
+          for their terroir, arch complexity, and walking history. No two
+          bottles are the same. No refunds either.
+        </p>
       </div>
-      <div class="card-body">
-        <h3>BCS cadre uncle</h3>
-        <p>The 40-year-old bald uncle celebrating his marriage to 19-year-old Bilkis. Deep, complex, with hints of wisdom and the ocean. Aged in oak-adjacent socks.</p>
-        <div class="card-price">
-           BDT 299.00 / 500ml
-          <button class="add-btn">Add to Cart</button>
+    </section>
+
+    <!-- PRODUCTS -->
+    <section class="products" id="products">
+      <p class="section-label" style="text-align: center">The Collection</p>
+      <h2>Find Your Foot Note</h2>
+      <p class="sub">
+        Each expression is unique, like the feet that made it. Choose wisely.
+      </p>
+      <div class="product-grid">
+        <div class="product-card">
+          <div class="card-img" style="background: #0d1b2a">
+            <span style="font-size: 5rem; position: relative; z-index: 1"
+              >🏃</span
+            >
+            <div class="overlay"></div>
+            <span class="card-tag">Bestseller</span>
+          </div>
+          <div class="card-body">
+            <h3>Neighbor's Overachieving Kid</h3>
+            <p>
+              Just got into Notre Dame College with raw determination, and mild
+              blister. An endurance experience in liquid form.
+            </p>
+            <div class="card-price">
+              BDT 49.00 / 500ml
+              <button class="add-btn">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="card-img" style="background: #1a2a1a">
+            <span style="font-size: 5rem; position: relative; z-index: 1"
+              >🧘</span
+            >
+            <div class="overlay"></div>
+            <span class="card-tag">Limited</span>
+          </div>
+          <div class="card-body">
+            <h3>Actor-Turned-Politician</h3>
+            <p>
+              Sourced from the beloved who courageously lost five consecutive
+              nomination races from his own party. Spiritually complex. Hints of
+              incense and enlightenment. Vegan feet only.
+            </p>
+            <div class="card-price">
+              BDT 129.00 / 500ml
+              <button class="add-btn">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="card-img" style="background: #1a1410">
+            <span style="font-size: 5rem; position: relative; z-index: 1"
+              >👴</span
+            >
+            <div class="overlay"></div>
+            <span class="card-tag">Vintage</span>
+          </div>
+          <div class="card-body">
+            <h3>BCS cadre uncle</h3>
+            <p>
+              The 40-year-old bald uncle celebrating his marriage to 19-year-old
+              Bilkis. Deep, complex, with hints of wisdom and the ocean. Aged in
+              oak-adjacent socks.
+            </p>
+            <div class="card-price">
+              BDT 299.00 / 500ml
+              <button class="add-btn">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="card-img" style="background: #2a1a1a">
+            <span style="font-size: 5rem; position: relative; z-index: 1"
+              >🏏</span
+            >
+            <div class="overlay"></div>
+            <span class="card-tag">New</span>
+          </div>
+          <div class="card-body">
+            <h3>Cricketer Turned Businessman</h3>
+            <p>
+              Sourced from a man who transitioned from scoring sixes on the
+              field to six figures inaugurating showrooms. Even as a failed
+              human being, his footwork never failed.
+            </p>
+            <p>
+              <i> Caution: too much consumption may lead to loss of spine</i>
+            </p>
+            <div class="card-price">
+              BDT 79.00 / 500ml
+              <button class="add-btn">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="card-img" style="background: #2a1a1a">
+            <span style="font-size: 5rem; position: relative; z-index: 1"
+              >🚌</span
+            >
+            <div class="overlay"></div>
+            <span class="card-tag">New</span>
+          </div>
+          <div class="card-body">
+            <h3>Mirpur Road Commuter</h3>
+            <p>
+              Sourced from a man who stood four hours in a packed bus and still
+              made it to office on time. Notes of diesel, patience, and quiet
+              resentment. Finishes long.
+            </p>
+            <div class="card-price">
+              BDT 79.00 / 500ml
+              <button class="add-btn">Add to Cart</button>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
+    </section>
 
-  </div>
-</section>
+    <!-- TESTIMONIALS -->
+    <section class="testimonials">
+      <p class="section-label" style="color: var(--gold)">
+        Client Testimonials
+      </p>
+      <h2>Words From Our Community</h2>
+      <p class="sub">Real people. Real feet. Real reviews. Mostly real.</p>
+      <div class="testi-grid">
+        <div class="testi-card">
+          <div class="stars">★★★★★</div>
+          <p>
+            "I can't legally describe what happened after I drank this, but I
+            will say my podiatrist was very surprised."
+          </p>
+          <div class="testi-author">
+            — Amran Hossain, Narayanganj · Verified Purchaser
+          </div>
+        </div>
+        <div class="testi-card">
+          <div class="stars">★★★★★</div>
+          <p>
+            "I bought the BCS Cadre Uncle for my wife's birthday. She asked for
+            a divorce. I finished the bottle myself. 10/10."
+          </p>
+          <div class="testi-author">
+            — Azmain Omni, Khulna · Verified Purchaser
+          </div>
+        </div>
+        <div class="testi-card">
+          <div class="stars">★★★★☆</div>
+          <p>
+            "Removed one star because the bottle arrived with a small amount
+            missing. Customer service explained it was 'evaporation'. I respect
+            the honesty."
+          </p>
+          <div class="testi-author">
+            — Mir Zafor Ali, London · Verified Purchaser
+          </div>
+        </div>
+        <div class="testi-card">
+          <div class="stars">★★★★★</div>
+          <p>
+            "Served this at my cousin's wedding in Sylhet as the 'house
+            special'. Nobody asked questions. That is what I call a premium
+            product."
+          </p>
+          <div class="testi-author">
+            — Nurul Islam Nuru, Sylhet · Verified Purchaser
+          </div>
+        </div>
 
-<!-- TESTIMONIALS -->
-<section class="testimonials">
-  <p class="section-label" style="color:var(--gold)">Client Testimonials</p>
-  <h2>Words From Our Community</h2>
-  <p class="sub">Real people. Real feet. Real reviews. Mostly real.</p>
-  <div class="testi-grid">
-    <div class="testi-card">
-      <div class="stars">★★★★★</div>
-      <p>"I can't legally describe what happened after I drank this, but I will say my podiatrist was very surprised."</p>
-      <div class="testi-author">— Amran Hossain, Narayanganj · Verified Purchaser</div>
-    </div>
-    <div class="testi-card">
-      <div class="stars">★★★★★</div>
-      <p>"I bought the BCS Cadre Uncle for my wife's birthday. She asked for a divorce. I finished the bottle myself. 10/10."</p>
-      <div class="testi-author">— Azmain Omni, Khulna · Verified Purchaser</div>
-      
-    </div>
-    <div class="testi-card">
-      <div class="stars">★★★★☆</div>
-      <p>"Removed one star because the bottle arrived with a small amount missing. Customer service explained it was 'evaporation'. I respect the honesty."</p>
-      <div class="testi-author">— Mir Zafor Ali, London · Verified Purchaser</div>
-    </div>
-  </div>
-</section>
-
-<!-- SCIENCE -->
-<section class="science" id="science">
-  <div class="science-inner">
-    <div>
-      <p class="section-label">The AquaToes Method</p>
-      <h2>The Science of Sole</h2>
-      <p>Our proprietary Cold Sole Extraction™ process ensures that every trace mineral, every micro-molecule of human foot, is preserved in its most authentic state.</p>
-      <p>We collaborate with leading scientists — specifically our cousin who took three semesters of chemistry before switching to marketing — to validate every batch.</p>
-      <p>The result is a water unlike anything the water industry has ever seen. Legally required to say: this is because no one else has tried this.</p>
-      <a href="#products" class="btn" style="margin-top:1rem">Shop the Science</a>
-    </div>
-    <div class="molecule-box">
-      <h4>Nutritional Profile per 500ml</h4>
-      <div class="ingredient">
-        <span class="ing-name">H₂O (Regular Water)</span>
-        <div class="ing-bar"><div class="ing-fill" style="width:94%"></div></div>
-        <span class="ing-pct">94%</span>
+        <div class="testi-card">
+          <div class="stars">★★★☆☆</div>
+          <p>
+            "Tried the Mirpur Road Commuter. Tastes exactly like my daily
+            commute: long, salty, and I don't know why I keep doing it to
+            myself."
+          </p>
+          <div class="testi-author">
+            — Lebu Begum, Dhaka · Verified Purchaser
+          </div>
+        </div>
       </div>
-      <div class="ingredient">
-        <span class="ing-name">Foot Essence™</span>
-        <div class="ing-bar"><div class="ing-fill" style="width:4%"></div></div>
-        <span class="ing-pct">4%</span>
+    </section>
+
+    <!-- SCIENCE -->
+    <section class="science" id="science">
+      <div class="science-inner">
+        <div>
+          <p class="section-label">The AquaToes Method</p>
+          <h2>The Science of Sole</h2>
+          <p>
+            Our proprietary Cold Sole Extraction™ process ensures that every
+            trace mineral, every micro-molecule of human foot, is preserved in
+            its most authentic state.
+          </p>
+          <p>
+            We collaborate with leading scientists — specifically our cousin who
+            took three semesters of chemistry before switching to marketing — to
+            validate every batch.
+          </p>
+          <p>
+            The result is a water unlike anything the water industry has ever
+            seen. Legally required to say: this is because no one else has tried
+            this.
+          </p>
+          <a href="#products" class="btn" style="margin-top: 1rem"
+            >Shop the Science</a
+          >
+        </div>
+        <div class="molecule-box">
+          <h4>Nutritional Profile per 500ml</h4>
+          <div class="ingredient">
+            <span class="ing-name">H₂O (Regular Water)</span>
+            <div class="ing-bar">
+              <div class="ing-fill" style="width: 94%"></div>
+            </div>
+            <span class="ing-pct">94%</span>
+          </div>
+          <div class="ingredient">
+            <span class="ing-name">Foot Essence™</span>
+            <div class="ing-bar">
+              <div class="ing-fill" style="width: 4%"></div>
+            </div>
+            <span class="ing-pct">4%</span>
+          </div>
+          <div class="ingredient">
+            <span class="ing-name">Spiritual Minerals</span>
+            <div class="ing-bar">
+              <div class="ing-fill" style="width: 1%"></div>
+            </div>
+            <span class="ing-pct">1%</span>
+          </div>
+          <div class="ingredient">
+            <span class="ing-name">Proprietary Mystery</span>
+            <div class="ing-bar">
+              <div class="ing-fill" style="width: 1%"></div>
+            </div>
+            <span class="ing-pct">1%</span>
+          </div>
+          <p style="font-size: 0.72rem; color: var(--mid); margin-top: 1rem">
+            *Daily values not established. Not intended to diagnose, treat,
+            cure, or prevent any condition. Especially not foot conditions.
+          </p>
+        </div>
       </div>
-      <div class="ingredient">
-        <span class="ing-name">Spiritual Minerals</span>
-        <div class="ing-bar"><div class="ing-fill" style="width:1%"></div></div>
-        <span class="ing-pct">1%</span>
+    </section>
+
+    <!-- NEWSLETTER -->
+    <section class="newsletter">
+      <div>
+        <h3>Stay Ahead of the Sole Curve</h3>
+        <p>
+          New batches drop weekly. Get early access, exclusive foot notes, and
+          10% off your first order.
+        </p>
       </div>
-      <div class="ingredient">
-        <span class="ing-name">Proprietary Mystery</span>
-        <div class="ing-bar"><div class="ing-fill" style="width:1%"></div></div>
-        <span class="ing-pct">1%</span>
+      <div class="email-form">
+        <input type="email" placeholder="your@email.com" />
+        <button>Subscribe</button>
       </div>
-      <p style="font-size:.72rem;color:var(--mid);margin-top:1rem">*Daily values not established. Not intended to diagnose, treat, cure, or prevent any condition. Especially not foot conditions.</p>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="footer-brand">
+        <span class="logo">Aqua<span>Toes</span>™</span>
+        <p>
+          Premium artisanal foot wash water for discerning palates. Bottled with
+          dignity. Consumed at your own risk.
+        </p>
+      </div>
+      <div>
+        <h4>Shop</h4>
+        <ul>
+          <li><a href="#">Neighbor's overachieving kid</a></li>
+          <li><a href="#">BCS cadre uncle</a></li>
+          <li><a href="#">Actor-Turned-Politician</a></li>
+          <li><a href="#">Mirpur Road Commuter</a></li>
+          <li><a href="#">Gift Sets</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#">Our Story</a></li>
+          <li><a href="#">Our Feet</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Press</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="#">Terms of Sole</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Refund Policy</a></li>
+          <li><a href="#">FDA Disclaimer</a></li>
+        </ul>
+      </div>
+    </footer>
+    <div class="footer-bottom">
+      © 2024 AquaToes™ International. All rights reserved. *12,000+ satisfied
+      customers statistic based on internal survey of 4 people and a dog.
     </div>
-  </div>
-</section>
-
-<!-- NEWSLETTER -->
-<section class="newsletter">
-  <div>
-    <h3>Stay Ahead of the Sole Curve</h3>
-    <p>New batches drop weekly. Get early access, exclusive foot notes, and 10% off your first order.</p>
-  </div>
-  <div class="email-form">
-    <input type="email" placeholder="your@email.com" />
-    <button>Subscribe</button>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer>
-  <div class="footer-brand">
-    <span class="logo">Aqua<span>Toes</span>™</span>
-    <p>Premium artisanal foot wash water for discerning palates. Bottled with dignity. Consumed at your own risk.</p>
-  </div>
-  <div>
-    <h4>Shop</h4>
-    <ul>
-      <li><a href="#">Neighbor's Overachieving Kid</a></li>
-      <li><a href="#">BCS cadre uncle</a></li>
-      <li><a href="#">Actor-Turned-Politician</a></li>
-      <li><a href="#">Gift Sets</a></li>
-    </ul>
-  </div>
-  <div>
-    <h4>Company</h4>
-    <ul>
-      <li><a href="#">Our Story</a></li>
-      <li><a href="#">Our Feet</a></li>
-      <li><a href="#">Careers</a></li>
-      <li><a href="#">Press</a></li>
-    </ul>
-  </div>
-  <div>
-    <h4>Legal</h4>
-    <ul>
-      <li><a href="#">Terms of Sole</a></li>
-      <li><a href="#">Privacy Policy</a></li>
-      <li><a href="#">Refund Policy</a></li>
-      <li><a href="#">FDA Disclaimer</a></li>
-    </ul>
-  </div>
-</footer>
-<div class="footer-bottom">
-  © 2024 AquaToes™ International. All rights reserved. *12,000+ satisfied customers statistic based on internal survey of 4 people and a dog.
-</div>
-
-</body>
+  </body>
 </html>
